@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSHM Knowledge Campus - Payment Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Similar styling to the admission form */
+        body {
+            font-family: Poppins;
+            margin: 0;
+            padding: 0;
+            background-color: #df600b70;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f0f0f0c5;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(to bottom right, #ffac1c, #fb4831);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header img {
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+        .header h1 {
+            margin: 10px 0 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            color: #ff6600;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content p{
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(to bottom right, #ffac1c, #fb4831);
+            color: white;
+            border-radius: 0 0 8px 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        form input, form select {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        form button {
+            width: 20%;
+            margin-left: 40%;
+            display: inline-block;
+            text-decoration: none;
+            color: #f65600;
+            border: 1px solid #f65600;
+            border-radius: 50px;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+        form button:hover {
+            color: #fff;
+            border: 1px solid #f65600;
+            background: linear-gradient(to bottom right, #ff6f00, #ed2f00);
+            transition: 0.6s;
+            box-shadow: 40px 0 100px #ff6b0279, -40px 0 100px #f62d007b;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="Resources/NSHM_Logo.png" alt="NSHM Logo">
+            <h1>NSHM Knowledge Campus</h1>
+        </div>
+        <div class="content">
+            <h2>Payment Form</h2>
+            <p>Complete the payment to proceed.</p>
+            <form id="paymentForm">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" required>
+
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+
+                <label for="ammount">Ammount:</label>
+                <input type="number" id="ammount" name="ammount" required>
+
+                <label for="cardholder-name">Cardholder Name:</label>
+                <input type="text" id="cardholder-name" name="cardholder-name" required>
+
+
+
+                <button type="submit">Pay Now</button>
+            </form>
+        </div>
+        <div class="footer">
+            &copy; 2024 NSHM Knowledge Campus. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const cardNumber = document.getElementById('card-number').value;
+            const expiryDate = document.getElementById('expiry-date').value;
+            const cvv = document.getElementById('cvv').value;
+            const cardholderName = document.getElementById('cardholder-name').value;
+            const ammount = document.getElementById('ammount').value;
+
+            localStorage.setItem('cardNumber', cardNumber);
+            localStorage.setItem('expiryDate', expiryDate);
+            localStorage.setItem('cardholderName', cardholderName);
+            localStorage.setItem('ammount', ammount);
+
+            window.location.href = 'confirmation.html';
+        });
+    </script>
+</body>
+</html>

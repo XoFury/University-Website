@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSHM University Design - Shayan Das</title>
+    <link rel="stylesheet" href="D:/University_Website_Project/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link rel="stylesheet" href="D:\University_Website_Project\Slider.css">
+</head>
+<body>
+<section class="sub-header">
+    <nav>
+        <a href=""index.html"><img src="Resources/NSHM_Logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="las la-times-circle" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="D:\University_Website_Project\index.html">HOME</a></li>
+                        <li><a href="D:\University_Website_Project\About.html">ABOUT</a></li>
+                        <li><a href="D:\University_Website_Project\Course.html">COURSE</a></li>
+                        <li><a href="D:\University_Website_Project\Blog.html">BLOG</a></li>
+                        <li><a href="D:\University_Website_Project\Contact.html">CONTACT</a></li>
+                    </ul>                
+            </div>
+            <i class="las la-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>About Us</h1>
+</section>
+
+    <!---------- About Us Content ------------>
+
+    <section class="about-us">
+        <div class="row">
+            <div class="about-col">
+                <h1>Our Mission & Vision</h1>
+                <p>
+                    NSHM stands as a beacon of academic excellence, dedicated to cultivating holistic individuals who are intellectually sharp, ethically sound, and socially responsible. Our institution is committed to providing a transformative educational experience that empowers students to become future leaders. With a diverse array of undergraduate and postgraduate programs, NSHM offers a rich learning environment where students can explore their interests, develop their talents, and acquire the skills necessary to thrive in an ever-evolving world. Our state-of-the-art infrastructure and distinguished faculty create an inspiring atmosphere that fosters innovation, critical thinking, and lifelong learning. Beyond academics, NSHM emphasizes character development, personal growth, and the cultivation of a global perspective. By choosing NSHM, students embark on a journey of intellectual and personal enrichment that prepares them for a fulfilling and successful future.
+                </p>
+                <a href="D:\University_Website_Project\index.html" class="hero-btn red-btn">EXPLORE NOW</a>
+            </div>
+            <div class="about-col">
+                <img src="Resources/about.jpg">
+            </div>
+        </div>
+    </section>
+
+    <!------------ Footer -------------->
+
+<section class="footer">
+    <h1>About Us</h1>
+    <h4>
+        <p>
+            NSHM: Your future starts here. Let's build it together.
+        </p>
+    </h4>
+    <div class="icons">
+        <i class="lab la-facebook-f"></i>
+        <i class="lab la-twitter"></i>
+        <i class="lab la-instagram"></i>
+        <i class="lab la-linkedin-in"></i>
+    </div>
+    <div class="Made-By">
+        <p>Made By <i class="lab la-instagram"></i> Shayan Das</p>
+    </div> 
+</section>
+
+    <!------------ JavaScript for Toggle Menu -------------->
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+    
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+</script>
+
+</body>
+</html>

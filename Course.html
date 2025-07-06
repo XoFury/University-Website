@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSHM University Design - Shayan Das</title>
+    <link rel="stylesheet" href="D:/University_Website_Project/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link rel="stylesheet" href="D:\University_Website_Project\Slider.css">
+</head>
+<body>
+<section class="sub-header">
+    <nav>
+        <a href=""index.html"><img src="Resources/NSHM_Logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="las la-times-circle" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="D:\University_Website_Project\index.html">HOME</a></li>
+                        <li><a href="D:\University_Website_Project\About.html">ABOUT</a></li>
+                        <li><a href="D:\University_Website_Project\Course.html">COURSE</a></li>
+                        <li><a href="D:\University_Website_Project\Blog.html">BLOG</a></li>
+                        <li><a href="D:\University_Website_Project\Contact.html">CONTACT</a></li>
+                    </ul>                
+            </div>
+            <i class="las la-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>Our Programmes</h1>
+</section>
+
+<!---------- Course ------------>
+
+<section class="course">
+    <h1>Courses We Offer</h1>
+    <p>Our college offers a diverse range of undergraduate and graduate programs in STEM, liberal arts, and professional fields. 
+    </p>
+
+    <div class="row">
+        <div class="course-col">
+            <h3>Intermediate</h3>
+            <p>NSHM offers a robust selection of intermediate courses designed to bridge the gap between high school and higher education.** Our programs provide students with a strong foundation in various disciplines, fostering critical thinking, problem-solving, and practical skills. Whether you're interested in pursuing STEM, humanities, or commerce, NSHM has an intermediate course tailored to your aspirations. 
+            </p>
+        </div>
+        <div class="course-col">
+            <h3>Degree</h3>
+            <p>NSHM offers a wide array of undergraduate programs designed to cater to diverse interests and career aspirations. Students can choose from fields like Computer Science, Engineering, Business Administration, Design, and the Liberal Arts. Our curriculum is meticulously crafted to equip students with the necessary skills and knowledge to excel in today's competitive world.
+            </p>
+        </div>
+        <div class="course-col">
+            <h3>Post Graduate</h3>
+            <p>NSHM offers a spectrum of postgraduate programs designed to cater to diverse career aspirations. From the rigors of Master of Business Administration (MBA) with specializations in Finance, Marketing, and Human Resources, to the technical expertise of Master of Computer Applications (MCA) and Master of Science (M.Sc.) degrees in Data Science, Artificial Intelligence, and Cyber Security, NSHM empowers students to become industry leaders.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!----------------- FACILITIES ----------------->
+
+<section class="facilities">
+    <h1>Our Facilities</h1>
+    <p>NSHM offers a comprehensive range of advanced facilities to enrich the student experience. The state-of-the-art library 
+        <br>provides unparalleled access to knowledge resources, while diverse recreational spaces promote physical and mental well-being. 
+        <br>Moreover, the institution places a strong emphasis on student health and nutrition, offering 
+        <br>a variety of wholesome and appetizing food options. 
+    </p>
+
+        <div class="row">
+            <div class="facilities_col">
+                <img src="Resources/library.png">
+                <h3>World Class Library</h3>
+                <p>The college is proud to house a world-class library that stands as a testament to its commitment to academic excellence. This intellectual hub, replete with cutting-edge technology and an extensive collection of scholarly resources, fosters a vibrant environment for both students and faculty. Here, minds are ignited, curiosity is nurtured, and the pursuit of knowledge is elevated to new heights.
+                </p>
+            </div>
+            <div class="facilities_col">
+                <img src="Resources/basketball.png">
+                <h3>Diverse Play Grounds</h3>
+                <p>The college boasts a sprawling campus adorned with a diverse array of playgrounds, catering to the recreational needs of both students and faculty. From expansive football and cricket fields to specialized courts for basketball, volleyball, and tennis, there's a space for every athletic inclination. Beyond traditional sports, the campus also features tranquil gardens, jogging tracks, and outdoor fitness equipment, ensuring a holistic approach to well-being and a vibrant campus life. 
+                </p>
+            </div>
+            <div class="facilities_col">
+                <img src="Resources/cafeteria.png">
+                <h3>Tasty & Healthy Food</h3>
+                <p>The college boasts a sprawling cafeteria that's a haven for both health enthusiasts and food lovers. The menu is a delightful blend of nutritious and delicious options, from fresh salads bursting with vibrant colors to hearty, flavorful main courses. Students can indulge in a variety of beverages, including refreshing fruit juices and aromatic teas, all crafted to complement their meals. The cafeteria's inviting atmosphere and delectable offerings make it a popular spot for students to socialize and recharge between classes. 
+                </p>
+            </div>
+        </div>
+</section>
+
+    <!------------ Footer -------------->
+
+<section class="footer">
+    <h1>About Us</h1>
+    <h4>
+        <p>
+            NSHM: Your future starts here. Let's build it together.
+        </p>
+    </h4>
+    <div class="icons">
+        <i class="lab la-facebook-f"></i>
+        <i class="lab la-twitter"></i>
+        <i class="lab la-instagram"></i>
+        <i class="lab la-linkedin-in"></i>
+    </div>
+    <div class="Made-By">
+        <p>Made By <i class="lab la-instagram"></i> Shayan Das</p>
+    </div> 
+</section>
+
+    <!------------ JavaScript for Toggle Menu -------------->
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+    
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+</script>
+
+</body>
+</html>

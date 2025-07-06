@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSHM University Design - Shayan Das</title>
+    <link rel="stylesheet" href="D:/University_Website_Project/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link rel="stylesheet" href="D:\University_Website_Project\Slider.css">
+</head>
+<body>
+<section class="sub-header">
+    <nav>
+        <a href=""index.html"><img src="Resources/NSHM_Logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="las la-times-circle" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="D:\University_Website_Project\index.html">HOME</a></li>
+                        <li><a href="D:\University_Website_Project\About.html">ABOUT</a></li>
+                        <li><a href="D:\University_Website_Project\Course.html">COURSE</a></li>
+                        <li><a href="D:\University_Website_Project\Blog.html">BLOG</a></li>
+                        <li><a href="D:\University_Website_Project\Contact.html">CONTACT</a></li>
+                    </ul>                
+            </div>
+            <i class="las la-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>Our Certificate & Online Programs for 2024</h1>
+</section>
+
+<!---------- Blog page content ---------->
+
+<section class="blog-content">
+    <div class="row">
+        <div class="blog-left">
+            <img src="Resources/certificate.jpg">
+            <h2>Our Certificate & Online Programs for 2024</h2>
+            <p>NSHM is committed to providing flexible and accessible education options to meet the evolving needs of learners. Our diverse range of online programs and certificates offer opportunities for professional development, skill enhancement, and career advancement.</p>
+            <br>
+            <p>Online Programs:-
+                <p>
+                    Master of Business Administration (MBA): Immerse yourself in the dynamic world of business with our online MBA program. Gain a comprehensive understanding of management principles, strategic thinking, and leadership skills.
+                </p>
+                <p>
+                    Master of Computer Applications (MCA): Advance your IT career with our online MCA program. Develop expertise in software development, database management, and emerging technologies.
+                </p>
+                <p>
+                    Master of Science (M.Sc.) in Data Science: Become a data-driven decision-maker with our online M.Sc. in Data Science. Master data analysis, machine learning, and big data technologies.
+                </p>
+                <p>
+                    Postgraduate Diploma in Digital Marketing: Acquire in-demand digital marketing skills with our online postgraduate diploma. Learn about SEO, social media marketing, content marketing, and more.
+                </p>
+            </p>
+            <br>
+            <p>Certificate Programs
+                <p>
+                    Digital Marketing Certification: Enhance your digital marketing knowledge with our comprehensive certificate program. Gain practical skills in social media, SEO, PPC, and email marketing.
+                </p>
+                <p>
+                    Data Analytics Certification: Develop data analysis skills and become proficient in using data visualization tools. This certificate program is ideal for professionals looking to transition into data-driven roles.
+                </p>
+                <p>
+                    Cybersecurity Certification: Protect sensitive information with our cybersecurity certification. Learn about network security, threat detection, and incident response.
+                </p>
+                <p>
+                    Project Management Certification: Master project management methodologies and tools. This certificate program is valuable for professionals seeking to improve project efficiency and success.
+                </p>    
+            </p>
+            <br>
+            <p>Benefits of Online Learning
+                <p> Flexibility: Learn at your own pace and convenience.</p>
+                <p> Accessibility: Access course materials and interact with faculty and peers online.</p>
+                <p> Affordability: Competitive tuition fees and flexible payment options.</p>
+                <p>  Career Advancement: Gain in-demand skills and enhance your career prospects.</p>
+            </p>
+            <div class="comment-box">
+                <h3>Leave a comment</h3>
+                <form class="comment-form">
+                    <input type="text" placeholder="Enter Name">
+                    <input type="email" placeholder="Enter Email">
+                    <textarea rows="5" placeholder="Your comment"></textarea>
+                    <button type="submit" class="hero-btn red-btn">POST COMMENT</button>
+                </form>
+            </div>
+        </div>
+        <div class="blog-right">
+            <h3>Post Categories</h3>
+            <div>
+                <span>Business Analytics</span>
+                <span>21</span>
+            </div>
+            <div>
+                <span>Data Science</span>
+                <span>28</span>
+            </div>
+            <div>
+                <span>Machine Learning</span>
+                <span>15</span>
+            </div>
+            <div>
+                <span>Computer Science</span>
+                <span>34</span>
+            </div>
+            <div>
+                <span>AutoCAD</span>
+                <span>42</span>
+            </div>
+            <div>
+                <span>Journalism</span>
+                <span>22</span>
+            </div>
+            <div>
+                <span>Commerce</span>
+                <span>30</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!------------ Footer -------------->
+
+<section class="footer">
+    <h1>About Us</h1>
+    <h4>
+        <p>
+            NSHM: Your future starts here. Let's build it together.
+        </p>
+    </h4>
+    <div class="icons">
+        <i class="lab la-facebook-f"></i>
+        <i class="lab la-twitter"></i>
+        <i class="lab la-instagram"></i>
+        <i class="lab la-linkedin-in"></i>
+    </div>
+    <div class="Made-By">
+        <p>Made By <i class="lab la-instagram"></i> Shayan Das</p>
+    </div> 
+</section>
+
+    <!------------ JavaScript for Toggle Menu -------------->
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+    
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+</script>
+
+</body>
+</html>

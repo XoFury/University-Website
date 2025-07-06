@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSHM Knowledge Campus - Confirmation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Similar styling to the previous forms */
+        body {
+            font-family: Poppins;
+            margin: 0;
+            padding: 0;
+            background-color:  #df600b70;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f0f0f0c5;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(to bottom right, #ffac1c, #fb4831);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header img {
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+        .header h1 {
+            margin: 10px 0 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            font-size: 30px;
+            color: #ff6600;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content h4{
+            text-align: center;
+            font-weight: 600;
+        }
+        .content h3{
+            text-align: center;
+        }
+        .content p{
+            margin-left: 50px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(to bottom right, #ffac1c, #fb4831);
+            color: white;
+            border-radius: 0 0 8px 8px;
+        }
+        .details {
+            margin-bottom: 20px;
+        }
+        button {
+            width: 30%;
+            margin-left: 35%;
+            display: inline-block;
+            text-decoration: none;
+            color: #f65600;
+            border: 1px solid #f65600;
+            border-radius: 50px;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+        button:hover {
+            color: #fff;
+            border: 1px solid #f65600;
+            background: linear-gradient(to bottom right, #ff6f00, #ed2f00);
+            transition: 0.6s;
+            box-shadow: 40px 0 100px #ff6b0279, -40px 0 100px #f62d007b;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="Resources/NSHM_Logo.png" alt="NSHM Logo">
+            <h1>NSHM Knowledge Campus</h1>
+        </div>
+        <div class="content">
+            <h2>- CONFIRMATION -</h2>
+            <h4>Thank you for your submission and payment. Below are the details:</h4>
+            <div class="details">
+                <h3>----------------------- Admission Details: -----------------------</h3>
+                <p>Full Name: <span id="displayName"></span></p>
+                <p>Email: <span id="displayEmail"></span></p>
+                <p>Phone Number: <span id="displayPhone"></span></p>
+                <p>Gender: <span id="displayGender"></span></p>
+                <p>Program of Interest: <span id="displayProgram"></span></p>
+                <p>Additional Information: <span id="displayMessage"></span></p>
+
+                <h3>----------------------- Payment Details: -----------------------</h3>
+                <p>Card Number: <span id="displayCardNumber"></span></p>
+                <p>Expiry Date: <span id="displayExpiryDate"></span></p>
+                <p>Cardholder Name: <span id="displayCardholderName"></span></p>
+            </div>
+            <button onclick="downloadPDF()">Download PDF</button>
+        </div>
+        <div class="footer">
+            &copy; 2024 NSHM Knowledge Campus. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        // Retrieve data from localStorage and display it on the page
+        document.getElementById('displayName').textContent = localStorage.getItem('name');
+        document.getElementById('displayEmail').textContent = localStorage.getItem('email');
+        document.getElementById('displayPhone').textContent = localStorage.getItem('phone');
+        document.getElementById('displayGender').textContent = localStorage.getItem('gender');
+        document.getElementById('displayProgram').textContent = localStorage.getItem('program');
+        document.getElementById('displayMessage').textContent = localStorage.getItem('message');
+        
+        // Mask the card number for security
+        const cardNumber = localStorage.getItem('cardNumber');
+        const maskedCardNumber = cardNumber.replace(/\d{12}(\d{4})/, "** ** ** $1");
+        document.getElementById('displayCardNumber').textContent = maskedCardNumber;
+
+        document.getElementById('displayExpiryDate').textContent = localStorage.getItem('expiryDate');
+        document.getElementById('displayCardholderName').textContent = localStorage.getItem('cardholderName');
+
+        // Function to download the PDF
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.text("NSHM Knowledge Campus", 20, 20);
+            doc.text("Admission Confirmation", 20, 30);
+            
+            doc.text("Full Name: " + localStorage.getItem('name'), 20, 40);
+            doc.text("Email: " + localStorage.getItem('email'), 20, 50);
+            doc.text("Phone Number: " + localStorage.getItem('phone'), 20, 60);
+            doc.text("Gender: " + localStorage.getItem('gender'), 20, 70);
+            doc.text("Program of Interest: " + localStorage.getItem('program'), 20, 80);
+            doc.text("Additional Information: " + localStorage.getItem('message'), 20, 90);
+            
+            doc.text("Payment Details", 20, 100);
+            doc.text("Card Number: " + maskedCardNumber, 20, 110);
+            doc.text("Expiry Date: " + localStorage.getItem('expiryDate'), 20, 120);
+            doc.text("Cardholder Name: " + localStorage.getItem('cardholderName'), 20, 130);
+            
+            doc.save("confirmation.pdf");
+        }
+    </script>
+    <!-- Load jsPDF library from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</body>
+</html>

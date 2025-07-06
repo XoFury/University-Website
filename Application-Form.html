@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSHM Knowledge Campus - Admission Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styling as per your original code */
+        body {
+            font-family: Poppins;
+            margin: 0;
+            padding: 0;
+            background-color: #df600b70;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f0f0f0c5;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(to bottom right, #ffac1c, #fb4831);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header img {
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+        .header h1 {
+            margin: 10px 0 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            color: #ff6600;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content p{
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(to bottom right, #ffac1c, #fb4831);
+            color: white;
+            border-radius: 0 0 8px 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        form input, form select, form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        form .gender-options {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        form .gender-options input {
+            margin-right: 5px;
+            margin-left: 10px;
+        }
+        form button {
+            width: 20%;
+            margin-left: 40%;
+            display: inline-block;
+            text-decoration: none;
+            color: #f65600;
+            border: 1px solid #f65600;
+            border-radius: 50px;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+        form button:hover {
+            color: #fff;
+            border: 1px solid #f65600;
+            background: linear-gradient(to bottom right, #ff6f00, #ed2f00);
+            transition: 0.6s;
+            box-shadow: 40px 0 100px #ff6b0279, -40px 0 100px #f62d007b;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="Resources/NSHM_Logo.png" alt="NSHM Logo">
+            <h1>NSHM Knowledge Campus</h1>
+        </div>
+        <div class="content">
+            <h2>Admission Form</h2>
+            <p>Fill out the form below to apply for admission to NSHM Knowledge Campus.</p>
+            <form id="admissionForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="gender">Gender:</label>
+                <div class="gender-options">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other" required>
+                    <label for="other">Other</label>
+                </div>
+                
+                <label for="program">Program of Interest:</label>
+                <select id="program" name="program" required>
+                    <option value="bsc">B.Sc.</option>
+                    <option value="bcom">B.COM.</option>
+                    <option value="ba">B.A.</option>
+                    <option value="msc">M.Sc.</option>
+                    <option value="mcom">M.Com.</option>
+                    <option value="ma">M.A.</option>
+                    <option value="btech">B.Tech</option>
+                    <option value="mtech">M.Tech</option>
+                    <option value="bttm">B.T.T.M.</option>
+                    <option value="bca">Bachelor in Computer Applications (BCA)</option>
+                    <option value="bba">Bachelor in Business Administration (BBA)</option>
+                    <option value="mba">Master in Business Administration (MBA)</option>
+                </select>
+                
+                <label for="message">Additional Information:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="footer">
+            &copy; 2024 NSHM Knowledge Campus. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('admissionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const program = document.getElementById('program').value;
+            const message = document.getElementById('message').value;
+
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+            localStorage.setItem('phone', phone);
+            localStorage.setItem('gender', gender);
+            localStorage.setItem('program', program);
+            localStorage.setItem('message', message);
+
+            window.location.href = 'payment.html';
+        });
+    </script>
+</body>
+</html>
